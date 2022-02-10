@@ -67,9 +67,6 @@ ENV NODE_VERSION 14.18.1
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . ${NVM_DIR}/nvm.sh \
     && nvm install ${NODE_VERSION}
-# RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
-# RUN bash nodesource_setup.sh
-# RUN apt-get install nodejs -y
 RUN npm install npm@8 -g
 RUN command -v node
 RUN command -v npm
