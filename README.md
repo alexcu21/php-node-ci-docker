@@ -8,6 +8,7 @@ This image ins ufesful for WordPress projects that need build or package like [w
 ## Installed packages
 
 - ssh
+- git
 - openssh-client
 - rsync
 - curl
