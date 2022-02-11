@@ -80,10 +80,11 @@ RUN command -v node
 RUN command -v npm
 
 # installing yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-RUN apt install --no-install-recommends -y yarn
+RUN apt-get install --no-install-recommends -y yarn
 RUN command -v yarn
 
 # Other
