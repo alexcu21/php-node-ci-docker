@@ -62,15 +62,15 @@ RUN command -v composer
 
 # Node.js
 
-ENV NVM_DIR /root/.nvm
-ENV NODE_VERSION 14.18.1
+ENV NVM_DIR=/root/.nvm
+ENV NODE_VERSION=14.18.1
 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && . ${NVM_DIR}/nvm.sh \
     && nvm install ${NODE_VERSION}
-#RUN npm install npm@8 -g
-#RUN command -v node
-#RUN command -v npm
+RUN npm install npm@8 -g
+RUN command -v node
+RUN command -v npm
 
 # Other
 RUN mkdir ~/.ssh
