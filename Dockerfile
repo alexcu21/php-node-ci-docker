@@ -79,6 +79,14 @@ ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 RUN command -v node
 RUN command -v npm
 
+# installing yarn
+RUN curl https://deb.nodesource.com/setup_12.x | bash
+RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get install --no-install-recommends -y yarn
+RUN command -v yarn
+
 # Other
 RUN mkdir ~/.ssh
 RUN touch ~/.ssh_config
@@ -88,3 +96,4 @@ RUN php -v
 RUN composer --version
 RUN node -v
 RUN npm -v
+RUN yarn -v
