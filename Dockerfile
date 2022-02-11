@@ -69,8 +69,8 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | ba
     && . ${NVM_DIR}/nvm.sh \
     && nvm install ${NODE_VERSION}
 #RUN npm install npm@8 -g
-RUN command -v node
-RUN command -v npm
+#RUN command -v node
+#RUN command -v npm
 
 # Other
 RUN mkdir ~/.ssh
